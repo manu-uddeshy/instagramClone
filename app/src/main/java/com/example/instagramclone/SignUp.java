@@ -2,6 +2,7 @@ package com.example.instagramclone;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +21,7 @@ import com.shashank.sony.fancytoastlib.FancyToast;
 import java.util.List;
 
 public class SignUp extends AppCompatActivity implements View.OnClickListener{
-    private Button submitbtn , btngetall;
+    private Button submitbtn , btngetall, btnswitch;
     private EditText Ename, Pspeed,Ppower,Kspeed,Kpower;
     private TextView textView1;
     private String allkickboxers;
@@ -39,6 +40,14 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
         textView1 = (TextView) findViewById(R.id.Textview1);
         allkickboxers ="";
         btngetall = (Button) findViewById(R.id.btngetall);
+        btnswitch= (Button) findViewById(R.id.button2);
+        btnswitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Intent intent = new Intent(SignUp.this, SignUpLoginActivity.class);
+               startActivity(intent);
+            }
+        });
         textView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
