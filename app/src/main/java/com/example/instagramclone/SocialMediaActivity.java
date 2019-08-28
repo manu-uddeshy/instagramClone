@@ -30,4 +30,5 @@ adapter.addFragment(new UsersTab(), "users");
 adapter.addFragment(new ShareTab(),"share");
 viewPager.setAdapter(adapter);
     }
+
 }
