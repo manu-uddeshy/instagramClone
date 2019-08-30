@@ -1,6 +1,8 @@
 package com.example.instagramclone;
 
 
+import android.content.Intent;
+import android.icu.text.Transliterator;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextClock;
@@ -17,6 +20,7 @@ import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +32,7 @@ import java.util.List;
 public class UsersTab extends Fragment {
     private TextView txtloading;
     private ListView listview1;
-    private ArrayList arrayList;
+    private ArrayList<String> arrayList;
     private ArrayAdapter arrayAdapter;
 
 
@@ -63,9 +67,19 @@ public class UsersTab extends Fragment {
                 }
             }
         });
+        listview1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                //FancyToast.makeText(getContext(),"it works",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
+                Intent intent = new Intent(getContext(), UsersPosts.class);
+                intent.putExtra("username",arrayList.get(position));
+                startActivity(intent);
+            }
+        });
 
 
         return view;
     }
+
 
 }

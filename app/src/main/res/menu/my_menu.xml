@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/postimgitm"
+        android:orderInCategory="100"
+        android:title="Post Inage"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_camera_black_24dp"/>
+    <item
+        android:id="@+id/logoutitm"
+        android:orderInCategory="100"
+        android:title="Logout"
+        app:showAsAction="never"/>
+</menu>
